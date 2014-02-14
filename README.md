@@ -3,6 +3,7 @@
 CakePHP で Security.salt + 個人 salt + パスワードの認証方法を提供します。
 
 - Require: CakePHP 2.4+
+- ユーザーテーブルに個人 salt を保存するフィールドを追加
 
 ## How to use
 AppController.php
@@ -14,11 +15,11 @@ class AppController extends Controller {
 	public $components = array(
 		'Auth' => array(
 			'authenticate' => array(
-				'Salt' => array(
+				'PersonalSalt' => array(
 					'fields' => array(
 						'username' => 'username', // [optional] default: username
 						'password' => 'password', // [optional] default: password
-						'salt' => 'password_salt', // パーソナル salt を保存するテーブル
+						'salt' => 'password_salt', // 個人 salt を保存するテーブル
 					),
 					'hashType' => 'blowfish', // [optional] ハッシュ方式 (md5, sha1, sha256, blowfish)
 				)
