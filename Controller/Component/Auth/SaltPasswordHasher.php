@@ -16,13 +16,6 @@ App::uses('Security', 'Utility');
 class SaltPasswordHasher extends SimplePasswordHasher {
 
 	/**
-	 * Config for this object.
-	 *
-	 * @var array
-	 */
-	protected $_config = array('hashType' => null);
-
-	/**
 	 * Generate random salt
 	 *
 	 * @param integer $length Generate salt length
